@@ -7,8 +7,6 @@ use App\Models\categoria;
 
 class CategoriaController extends Controller
 {
-
-    
     public function getCategoria(){
         return response()->json(categoria::all(),200);
     }
