@@ -7,10 +7,12 @@ use App\Models\categoria;
 
 class CategoriaController extends Controller
 {
+    //Obtener todo lo que está en categorias
     public function getCategoria(){
         return response()->json(categoria::all(),200);
     }
 
+    //Obtener categoria por ID
     public function getCategoriaID($id){
         $categoria = categoria::find($id);
 
@@ -33,6 +35,7 @@ class CategoriaController extends Controller
             200);
     }
 
+    //Añadir categoria
     public function AddCategoria(Request $request){
         $categoria = categoria::create($request->all());
         return response()->json(
@@ -44,6 +47,7 @@ class CategoriaController extends Controller
             200);
     }
 
+    //Modificar categoria
     public function ModifyCategoria(Request $request, $id){
         $categoria = categoria::find($id);
 
@@ -69,6 +73,7 @@ class CategoriaController extends Controller
         );
     }
 
+    //Eliminar categoria
     public function DeleteCategoria($id){
         $categoria = categoria::find($id);
 
